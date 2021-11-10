@@ -2,7 +2,7 @@
 #include "bucket.h"
 
 int main(){
-    printf("Hello World\n");
+    printf("Hello World, ceci est un test\n");
 
     return 0;
 }
