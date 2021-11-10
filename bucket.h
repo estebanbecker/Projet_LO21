@@ -81,6 +81,8 @@ void free_list_of_buckets(list_of_buckets list_of_buckets);
  */
 int max_length_list_of_buckets(list_of_buckets list_of_buckets);
 
+
+
 /**
  * @brief Know the charactère at a given position in a string of a bucket
  * @param sceau bucket to know the charactère
