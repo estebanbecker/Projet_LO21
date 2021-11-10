@@ -40,6 +40,7 @@ bucket move_head(bucket sceau, bucket sceau_to);
 /**
  * @brief create a new bucket
  * @return bucket
+ * @author Pierre-Olivier Cayetanot
  */
 bucket create_bucket();
 
@@ -47,6 +48,7 @@ bucket create_bucket();
  * @brief free the bucket
  * @param sceau bucket to free
  * @return void
+ * @author Pierre-Olivier Cayetanot
  */
 void free_bucket(bucket sceau);
 
@@ -54,6 +56,7 @@ void free_bucket(bucket sceau);
  * @brief print the bucket
  * @param sceau bucket to print
  * @return void
+ * @author Pierre-Olivier Cayetanot
  */
 void print_bucket(bucket sceau);
 
@@ -61,12 +64,14 @@ void print_bucket(bucket sceau);
  * @brief print the list of buckets
  * @param list_of_buckets list of buckets to print
  * @return void
+ * @author Pierre-Olivier Cayetanot
  */
 void print_list_of_buckets(list_of_buckets list_of_buckets);
 
 /**
  * @brief create a new list of buckets
  * @return list_of_buckets
+ * @author Pierre-Olivier Cayetanot
  */
 list_of_buckets create_list_of_buckets();
 
@@ -74,6 +79,7 @@ list_of_buckets create_list_of_buckets();
  * @brief free the list of buckets
  * @param list_of_buckets list of buckets to free
  * @return void
+ * @author Pierre-Olivier Cayetanot
  */
 void free_list_of_buckets(list_of_buckets list_of_buckets);
 
@@ -84,7 +90,6 @@ void free_list_of_buckets(list_of_buckets list_of_buckets);
  * @author Esteban Becker
  */
 int max_lengh_list_of_buckets(list_of_buckets list_of_buckets);
-int max_length_list_of_buckets(list_of_buckets list_of_buckets);
 
 
 
@@ -104,7 +109,7 @@ char get_char_at_pos_in_bucket(bucket sceau, int pos);
  * @param list_of_buckets list of buckets to sort
  * @param int interation level
  * @return list_of_buckets
- * @author Esteban Becker
+ * @authors Esteban Becker, Pierre-Olivier Cayetanot
  * @note the list of buckets is sorted using an recursive algorithm
  */
 list_of_buckets sort_list_of_buckets(list_of_buckets list_of_buckets, int level);
