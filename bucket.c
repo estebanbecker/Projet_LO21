@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "bucket.h"
 
@@ -15,22 +16,24 @@ int max_lengh_list(char** liste, int lengh){
 
 bucket add_head(bucket seau, char *nombre)
 {
-    bucket new_seau;
-    strcpy(new_seau->val, nombre);
-    new_seau->next = seau;
-    return new_seau;
+    element *temp=malloc(sizeof(element));
+    strcpy(temp->val, nombre);
+    temp->next = seau;
+    return temp;
 }
 
 bucket remove_head(bucket seau){
-    bucket new_seau;
-    new_seau = seau->next;
-    free(seau);
-    return new_seau;
+    element *temp;
+    if(seau != NULL){
+        temp->next = seau->next;
+        free(seau);
+    }
+    return temp;
 }
 
 bucket move_head(bucket seau_from, bucket seau_to){
-    bucket new_seau;
+    element * temp;;
     add_head(seau_to, seau_from->val);
-    new_seau = remove_head(seau_from);
-    return new_seau;
+    temp = remove_head(seau_from);
+    return temp;
 }
