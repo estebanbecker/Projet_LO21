@@ -1,3 +1,6 @@
+#ifndef bucket_h
+#define bucket_h
+
 //chained list of string of size 11
 typedef struct elem{
     char *val[11];
@@ -78,19 +81,9 @@ void free_list_of_buckets(list_of_buckets list_of_buckets);
  * @brief Know the max lengh of the longest string in the list of buckets
  * @param list_of_buckets list of buckets to know the max lengh
  * @return int
+ * @author Esteban Becker
  */
-int max_length_list_of_buckets(list_of_buckets list_of_buckets);
-
-/**
- * @brief Know the charactère at a given position in a string of a bucket
- * @param sceau bucket to know the charactère
- * @param pos position to know the charactère
- * @return char
- * @return NULL if the position is out of range
- * @note the position is counted from the end
- * @author Pierre-Olivier Cayetanot
- */
-char get_char_at_pos_in_bucket(bucket sceau, int pos);
+int max_lengh_list_of_buckets(list_of_buckets list_of_buckets);
 
 /**
  * @brief Sort the list of buckets
@@ -101,3 +94,5 @@ char get_char_at_pos_in_bucket(bucket sceau, int pos);
  * @note the list of buckets is sorted using an recursive algorithm
  */
 list_of_buckets sort_list_of_buckets(list_of_buckets list_of_buckets, int level);
+
+#endif /* bucket_h */
