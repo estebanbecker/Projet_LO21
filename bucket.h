@@ -1,7 +1,7 @@
 #ifndef bucket_h
 #define bucket_h
 
-//chained list of string of size 11
+/*chained list of string of size 11*/
 typedef struct elem{
     char *val[11];
     struct elem *next;
@@ -84,13 +84,13 @@ list_of_buckets create_list_of_buckets();
 void free_list_of_buckets(list_of_buckets liste);
 
 /**
- * @brief Know the max lengh of the longest string in the list of buckets
- * @param list_of_buckets list of buckets to know the max lengh
- * @param int base
+ * @brief Know the max lengh of the longest string in the list
+ * @param char list where to search
+ * @param int lengh of the list
  * @return int
  * @author Esteban Becker
  */
-int max_lengh_list_of_buckets(list_of_buckets liste, int base);
+int max_lengh_list(char** liste, int lengh);
 
 
 
