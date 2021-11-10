@@ -10,26 +10,26 @@ typedef bucket *list_of_buckets;
 
 /**
  * @brief remove the head of the bucket
- * @param bucket bucket to remove the head from
+ * @param sceau bucket to remove the head from
  * @return bucket
  */
-bucket remove_head(bucket bucket);
+bucket remove_head(bucket sceau);
 
 /**
  * @brief add a new element at the head of the bucket
- * @param bucket bucket to add the element to
+ * @param sceau bucket to add the element to
  * @param val value to add
  * @return bucket
  */
-bucket add_head(bucket bucket, char *val);
+bucket add_head(bucket sceau, char *val);
 
 /**
  * @brief move head element from a bucket to another
- * @param bucket bucket to move the head element from
- * @param bucket_to bucket to move the element to
+ * @param sceau bucket to move the head element from
+ * @param sceau_to bucket to move the element to
  * @return bucket
  */
-bucket move_head(bucket bucket, bucket bucket_to);
+bucket move_head(bucket sceau, bucket sceau_to);
 
 /**
  * @brief create a new bucket
@@ -39,17 +39,17 @@ bucket create_bucket();
 
 /**
  * @brief free the bucket
- * @param bucket bucket to free
+ * @param sceau bucket to free
  * @return void
  */
-void free_bucket(bucket bucket);
+void free_bucket(bucket sceau);
 
 /**
  * @brief print the bucket
- * @param bucket bucket to print
+ * @param sceau bucket to print
  * @return void
  */
-void print_bucket(bucket bucket);
+void print_bucket(bucket sceau);
 
 /**
  * @brief print the list of buckets
