@@ -76,5 +76,5 @@ void free_list_of_buckets(list_of_buckets list_of_buckets);
  * @param list_of_buckets list of buckets to know the max lengh
  * @return int
  */
-int max_lengh_list_of_buckets(list_of_buckets list_of_buckets);
+int max_length_list_of_buckets(list_of_buckets list_of_buckets);
 
