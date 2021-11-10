@@ -62,7 +62,7 @@ void print_bucket(bucket sceau);
  * @param list_of_buckets list of buckets to print
  * @return void
  */
-void print_list_of_buckets(list_of_buckets list_of_buckets);
+void print_list_of_buckets(list_of_buckets liste);
 
 /**
  * @brief create a new list of buckets
@@ -75,24 +75,26 @@ list_of_buckets create_list_of_buckets();
  * @param list_of_buckets list of buckets to free
  * @return void
  */
-void free_list_of_buckets(list_of_buckets list_of_buckets);
+void free_list_of_buckets(list_of_buckets liste);
 
 /**
  * @brief Know the max lengh of the longest string in the list of buckets
  * @param list_of_buckets list of buckets to know the max lengh
+ * @param int base
  * @return int
  * @author Esteban Becker
  */
-int max_lengh_list_of_buckets(list_of_buckets list_of_buckets);
+int max_lengh_list_of_buckets(list_of_buckets liste, int base);
 
 /**
  * @brief Sort the list of buckets
  * @param list_of_buckets list of buckets to sort
  * @param int interation level
+ * @param int base
  * @return list_of_buckets
  * @author Esteban Becker
  * @note the list of buckets is sorted using an recursive algorithm
  */
-list_of_buckets sort_list_of_buckets(list_of_buckets list_of_buckets, int level);
+list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base);
 
 #endif /* bucket_h */
