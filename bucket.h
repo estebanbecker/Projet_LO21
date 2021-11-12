@@ -1,14 +1,30 @@
+/**
+ * @file bucket.h
+ * @author Becker Esteban, Pierre-Olivier Cayetanot
+ * @brief List of fuctions to manage the bucket.
+ * @version 0.1
+ * @date 2021-11-12
+ * 
+ * @copyright Creative Commons Attribution Non-Commercial (CC BY-NC) 2020
+ * 
+ */
+
 #ifndef bucket_h
 #define bucket_h
 
-/*chained list of string of size 11*/
+/**
+ * @brief Element of the bucket represented with a chained list.
+ * 
+ */
 typedef struct elem{
-    char val[11];
-    struct elem *next;
+    char val[11]; //!< Value of the element.
+    struct elem *next; //!< Pointer to the next element.
 }element;
 
+//! @brief Pointer to the head of the bucket.
 typedef element *bucket;
 
+//! @brief List of buckets that will have the size of the basis.
 typedef bucket *list_of_buckets;
 
 /**

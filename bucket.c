@@ -1,3 +1,14 @@
+/**
+ * @file bucket.c
+ * @author Becker Esteban, Pierre-Olivier Cayetanot
+ * @brief All the functions to manage the bucket.
+ * @version 0.1
+ * @date 2021-11-12
+ * 
+ * @copyright Creative Commons Attribution Non-Commercial (CC BY-NC)
+ * 
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
