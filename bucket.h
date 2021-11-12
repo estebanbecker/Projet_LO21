@@ -86,10 +86,14 @@ void print_list_of_buckets(list_of_buckets liste);
 
 /**
  * @brief create a new list of buckets
+ * @param bases bases to create the list of buckets (size of the list)
+ * @param argc number of arguments
+ * @param argv arguments
+ * @param liste pointer to list of buckets to create
  * @return list_of_buckets
  * @author Pierre-Olivier Cayetanot
  */
-list_of_buckets create_list_of_buckets();
+list_of_buckets create_list_of_buckets(int bases, int argc, char *argv[], list_of_buckets liste);
 
 /**
  * @brief free the list of buckets
