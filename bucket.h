@@ -83,7 +83,7 @@ void print_bucket(bucket seau);
  * @return void
  * @author Esteban Becker
  */
-void print_list_of_buckets(list_of_buckets liste,int bases);
+void print_list_of_buckets(list_of_buckets liste);
 
 /**
  * @brief create a new list of buckets
