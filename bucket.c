@@ -58,6 +58,9 @@ list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]){
     for (int i = 0; i < base; ++i) {
         liste[i] = create_bucket();
     }
+    for (int i = 1;i < argc;i++){
+        add_head(liste[1], argv[i]);
+    }
     return liste;
 }
 
@@ -107,16 +110,3 @@ bucket move_head(bucket seau_from, bucket seau_to){
     return temp;
 }
 
-void print_bucket(bucket seau){
-    element *temp = seau;
-    while(temp != NULL){
-        printf("%s\n", temp->val);
-        temp = temp->next;
-    }
-}
-
-void print_list_of_buckets(list_of_buckets liste,int bases){
-    for(int i = 0; i<bases;i++){
-        print_bucket(liste[i]);
-    }
-}
