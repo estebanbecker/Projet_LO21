@@ -44,8 +44,8 @@ void print_bucket(bucket seau){
 }
 
 void print_list_of_buckets(list_of_buckets liste){
-    int size = sizeof liste / sizeof *liste;
-    for(i=0; i < size; i++){
+    int size = sizeof liste / sizeof *liste; //calcul de la taille de la liste -> taille de la liste divisé par la taille d'un élément
+    for(int i=0; i < size; i++){
         print_bucket(liste[i]);
     }
 }
@@ -63,7 +63,7 @@ list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]){
 
 void free_list_of_buckets(list_of_buckets liste){
     int size = sizeof liste / sizeof *liste;
-    for(i=0; i < size; i++){
+    for(int i=0; i < size; i++){
         free_bucket(liste[i]);
     }
 }
