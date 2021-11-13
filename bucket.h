@@ -94,7 +94,7 @@ void print_list_of_buckets(list_of_buckets liste,int bases);
  * @return list_of_buckets
  * @author Pierre-Olivier Cayetanot
  */
-list_of_buckets create_list_of_buckets(int bases, int argc, char *argv[], list_of_buckets liste);
+list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]);
 
 /**
  * @brief free the list of buckets
