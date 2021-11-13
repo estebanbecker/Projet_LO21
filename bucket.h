@@ -72,7 +72,7 @@ void free_bucket(bucket seau);
  * @brief print the bucket
  * @param seau bucket to print
  * @return void
- * @author Esteban Becker
+ * @author Pierre-Olivier Cayetanot
  */
 void print_bucket(bucket seau);
 
@@ -81,9 +81,11 @@ void print_bucket(bucket seau);
  * @param list_of_buckets list of buckets to print
  * @param bases size of the bases
  * @return void
- * @author Esteban Becker
+ * @author Pierre-Olivier Cayetanot
  */
 void print_list_of_buckets(list_of_buckets liste);
+
+list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste);
 
 /**
  * @brief create a new list of buckets
@@ -94,7 +96,7 @@ void print_list_of_buckets(list_of_buckets liste);
  * @return list_of_buckets
  * @author Pierre-Olivier Cayetanot
  */
-list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]);
+list_of_buckets create_list_of_buckets(int base);
 
 /**
  * @brief free the list of buckets

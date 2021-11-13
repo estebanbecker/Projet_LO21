@@ -52,7 +52,7 @@ void print_list_of_buckets(list_of_buckets liste){
 
 
 
-list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]){
+list_of_buckets create_list_of_buckets(int base){
     list_of_buckets liste = NULL;
     liste = malloc(sizeof(bucket) * base);
     for (int i = 0; i < base; ++i) {
