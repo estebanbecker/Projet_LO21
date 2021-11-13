@@ -72,7 +72,7 @@ void free_bucket(bucket seau);
  * @brief print the bucket
  * @param seau bucket to print
  * @return void
- * @author Pierre-Olivier Cayetanot
+ * @author Esteban Becker
  */
 void print_bucket(bucket seau);
 
@@ -80,7 +80,7 @@ void print_bucket(bucket seau);
  * @brief print the list of buckets
  * @param list_of_buckets list of buckets to print
  * @return void
- * @author Pierre-Olivier Cayetanot
+ * @author Esteban Becker
  */
 void print_list_of_buckets(list_of_buckets liste);
 
