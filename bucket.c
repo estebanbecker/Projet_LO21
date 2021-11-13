@@ -75,8 +75,14 @@ void free_list_of_buckets(list_of_buckets liste){
 }
 
 char get_char_at_pos_in_bucket(bucket seau, int pos){
-    char value = seau->val[pos];
-    return value;
+    int length = strlen(seau->val);
+    if(pos =< length){
+        char value = seau->val[length - pos];
+        return value;
+    } else {
+        return '\0';
+    }
+
 }
 
 int max_lengh_list(char** liste, int lengh){
