@@ -48,3 +48,17 @@ bucket move_head(bucket seau_from, bucket seau_to){
     temp = remove_head(seau_from);
     return temp;
 }
+
+void print_bucket(bucket seau){
+    element *temp = seau;
+    while(temp != NULL){
+        printf("%s\n", temp->val);
+        temp = temp->next;
+    }
+}
+
+void print_list_of_buckets(list_of_buckets liste,int bases){
+    for(int i = 0; i<bases;i++){
+        print_bucket(liste[i]);
+    }
+}

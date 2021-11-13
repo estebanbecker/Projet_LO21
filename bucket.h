@@ -79,10 +79,11 @@ void print_bucket(bucket seau);
 /**
  * @brief print the list of buckets
  * @param list_of_buckets list of buckets to print
+ * @param bases size of the bases
  * @return void
  * @author Esteban Becker
  */
-void print_list_of_buckets(list_of_buckets liste);
+void print_list_of_buckets(list_of_buckets liste,int bases);
 
 /**
  * @brief create a new list of buckets
