@@ -58,6 +58,9 @@ list_of_buckets create_list_of_buckets(int base, int argc, char *argv[]){
     for (int i = 0; i < base; ++i) {
         liste[i] = create_bucket();
     }
+}
+
+list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste){
     for (int i = 1;i < argc;i++){
         add_head(liste[1], argv[i]);
     }
