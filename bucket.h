@@ -46,12 +46,13 @@ bucket add_head(bucket seau, char *nombre);
 
 /**
  * @brief move head element from a bucket to another
- * @param seau bucket to move the head element from
- * @param seau_to bucket to move the element to
+ * @param seau_from bucket to move the head element from
+ * @param table_to table where the new element will go
+ * @param postition postition in the table where the new element will go
  * @return bucket seau_from with the head element removed
  * @author Esteban Becker
  */
-bucket move_head(bucket seau_from, bucket seau_to);
+bucket move_head(bucket seau_from, list_of_buckets table_to, int postition);
 
 /**
  * @brief create a new bucket

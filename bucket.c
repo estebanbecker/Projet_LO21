@@ -106,9 +106,10 @@ bucket remove_head(bucket seau){
     return temp;
 }
 
-bucket move_head(bucket seau_from, bucket seau_to){
+bucket move_head(bucket seau_from, list_of_buckets table_to, int postition){
     element * temp;
-    add_head(seau_to, seau_from->val);
+    
+    add_head(table_to[postition], seau_from->val);
     temp = remove_head(seau_from);
     return temp;
 }
