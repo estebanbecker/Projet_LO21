@@ -76,7 +76,7 @@ void free_list_of_buckets(list_of_buckets liste){
 
 char get_char_at_pos_in_bucket(bucket seau, int pos){
     int length = strlen(seau->val);
-    if(pos =< length){
+    if(pos <= length){
         char value = seau->val[length - pos];
         return value;
     } else {
@@ -114,7 +114,7 @@ bucket remove_head(bucket seau){
 
 bucket move_head(bucket seau_from, list_of_buckets table_to, int postition){
     element * temp;
-    
+
     add_head(table_to[postition], seau_from->val);
     temp = remove_head(seau_from);
     return temp;
