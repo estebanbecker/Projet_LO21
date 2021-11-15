@@ -13,13 +13,22 @@
 #include "bucket.h"
 
 int main(int argc, char *argv[]){
-    
-    int max;
-    list_of_buckets liste;
 
-    max = max_lengh_list(argv,argc);
+    char* char_base = argv[1];
+    int base = string_to_int_conversion(*char_base);
 
-    printf("%d\n",max);//fonction de debug
+    base = 16;
 
-    return 0;
+    list_of_buckets liste = create_list_of_buckets(base);
+    initialize_list_of_bucket(argc, argv, liste);
+
+    for (int i  = 0; i  < base; ++i ) {
+        print_list_of_buckets(liste);
+        liste = sort_list_of_buckets(liste, i, base);
+    }
 }
+//    int max;
+//    list_of_buckets liste;
+//    max = max_lengh_list(argv,argc);
+//    printf("%d\n",max);//fonction de debug
+//    return 0;
