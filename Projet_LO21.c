@@ -15,6 +15,11 @@
 
 int main(int argc, char *argv[]){
     
+    if(argc <3){
+        printf("Usage: %s <base> <list>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
     int max, base=atoi(argv[1]);
     list_of_buckets liste;
 
