@@ -12,6 +12,8 @@
 #ifndef bucket_h
 #define bucket_h
 
+#define MAX_LENGH_CHAR 11
+
 /**
  * @brief Element of the bucket represented with a chained list.
  * 
@@ -36,22 +38,14 @@ typedef bucket *list_of_buckets;
 bucket remove_head(bucket seau);
 
 /**
- * @brief add a new element at the head of the bucket
+ * @brief add a new element at the tail of the bucket
  * @param seau bucket to add the element to
  * @param val value to add
  * @return bucket
  * @author Esteban Becker
  */
-bucket add_head(bucket seau, char *nombre);
+bucket add_tail(bucket seau, char *nombre);
 
-/**
- * @brief move head element from a bucket to another
- * @param bucket_source bucket to move the head element from
- * @param bucket_target bucket where the new element will go
- * @return bucket seau_from with the head element removed
- * @author Esteban Becker
- */
-bucket move_head(bucket bucket_source, bucket bucket_target);
 
 
 /**
@@ -87,7 +81,7 @@ void print_list_of_buckets(list_of_buckets liste, int base);
  * @return list_of_buckets
  * @author Pierre-Olivier Cayetanot
  */
-list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste, int base);
+list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste);
 
 /**
  * @param argc number of arguments
