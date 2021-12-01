@@ -104,6 +104,8 @@ int string_to_int_conversion(char character) {
         result = character - 'a' + 10; 
     } else if ( character > 64 && character < 71 ) {
         result = character - 'A' + 10; 
+    } else {
+        result = -1;
     }
     return result;
 }
