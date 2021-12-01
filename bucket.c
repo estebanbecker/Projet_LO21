@@ -15,13 +15,6 @@
 
 #include "bucket.h"
 
-bucket create_bucket(){
-    bucket head = NULL;
-    head = malloc(sizeof(bucket));
-    head->next = NULL;
-    head->val = NULL;
-    return head;
-}
 
 void free_bucket(bucket seau){
     bucket current = seau;
@@ -44,7 +37,7 @@ void print_bucket(bucket seau){
 }
 
 void print_list_of_buckets(list_of_buckets liste){
-    int size = sizeof liste / sizeof *liste; //calcul de la taille de la liste -> taille de la liste divisé par la taille d'un élément
+    int size = sizeof(liste) / sizeof(*liste); //calcul de la taille de la liste -> taille de la liste divisé par la taille d'un élément commeent utiliser une autre méthode pour
     for(int i=0; i < size; i++){
         print_bucket(liste[i]);
     }
@@ -56,8 +49,9 @@ list_of_buckets create_list_of_buckets(int base){
     list_of_buckets liste = NULL;
     liste = malloc(sizeof(bucket) * base);
     for (int i = 0; i < base; ++i) {
-        liste[i] = create_bucket();
+        liste[i] = malloc(sizeof(bucket));
     }
+    return liste;
 }
 
 list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste){
@@ -82,7 +76,20 @@ char get_char_at_pos_in_bucket(bucket seau, int pos){
     } else {
         return '\0';
     }
+}
 
+int string_to_int_conversion(char character) {
+    int result = -1;
+    if( character > 47 && character < 58) {
+        result = character - 47; //les chiffres de 0 à 9 sont les caractères 48 à 57 du code ASCII
+    } else if( character > 96 && character < 103){
+        result = character - 96 + 10; //les lettres de l'alphabet majuscules sont les caractères 97 (a) à 122 (z) du code ASCII.
+    } else if ( character > 64 && character < 71 ) {
+        result = character - 64 + 10; //les lettres de l'alphabet majuscules sont les caractères 65 (A) à 90 (Z) du code ASCII.
+    } else if ( character == '\0') {
+        result = 0;
+    }
+    return result;
 }
 
 int max_lengh_list(char** liste, int lengh){
@@ -112,11 +119,29 @@ bucket remove_head(bucket seau){
     return temp;
 }
 
-bucket move_head(bucket seau_from, list_of_buckets table_to, int postition){
+bucket move_head(bucket bucket_source, bucket bucket_target){
     element * temp;
 
-    add_head(table_to[postition], seau_from->val);
-    temp = remove_head(seau_from);
+    add_head(bucket_source, bucket_target->val);
+    temp = remove_head(bucket_source);
     return temp;
 }
 
+list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base){
+ list_of_buckets new_list = create_list_of_buckets(base);
+    for (int  i = 0;  i < base; ++ i) {
+        bucket current = liste[i];
+        while (current != NULL) {
+            char character = get_char_at_pos_in_bucket(current, level);
+            int pos = string_to_int_conversion(character);
+            move_head(current, new_list[pos]);
+            current = current->next;
+        }
+        free_list_of_buckets(liste);
+    }
+}
+
+
+
+//vérifier pour chaque bucket -> parcourir l'ensemble de la liste de bucket
+//dans chaque élément, le bouger à l'emplacement correspondant -> si l'élément à 2, le bouger dans le bucket 2 de la liste

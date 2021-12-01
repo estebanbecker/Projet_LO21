@@ -46,20 +46,13 @@ bucket add_head(bucket seau, char *nombre);
 
 /**
  * @brief move head element from a bucket to another
- * @param seau_from bucket to move the head element from
- * @param table_to table where the new element will go
- * @param postition postition in the table where the new element will go
+ * @param bucket_source bucket to move the head element from
+ * @param bucket_target bucket where the new element will go
  * @return bucket seau_from with the head element removed
  * @author Esteban Becker
  */
-bucket move_head(bucket seau_from, list_of_buckets table_to, int postition);
+bucket move_head(bucket bucket_source, bucket bucket_target);
 
-/**
- * @brief create a new bucket
- * @return bucket
- * @author Pierre-Olivier Cayetanot
- */
-bucket create_bucket();
 
 /**
  * @brief free the bucket
@@ -134,6 +127,15 @@ int max_lengh_list(char** liste, int lengh);
  * @author Pierre-Olivier Cayetanot
  */
 char get_char_at_pos_in_bucket(bucket seau, int pos);
+
+
+/**
+ * @brief convert a string to its int conterpart in base 10 (a->11, f->)
+ * @param character character to be converted
+ * @return
+ * @author Pierre-Olivier Cayetanot
+ */
+int string_to_int_conversion(char character);
 
 /**
  * @brief Sort the list of buckets
