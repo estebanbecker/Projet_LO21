@@ -77,9 +77,17 @@ void print_bucket(bucket seau);
  * @return void
  * @author Pierre-Olivier Cayetanot
  */
-void print_list_of_buckets(list_of_buckets liste);
+void print_list_of_buckets(list_of_buckets liste, int base);
 
-list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste);
+/**
+ * @brief initialize a list of buckets
+ * @param argc number of arguments
+ * @param argv arguments
+ * @param liste pointer to list of buckets to create
+ * @return list_of_buckets
+ * @author Pierre-Olivier Cayetanot
+ */
+list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste, int base);
 
 /**
  * @param argc number of arguments
@@ -90,21 +98,12 @@ list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_bucke
 list_of_buckets create_list_of_buckets(int base);
 
 /**
- * @brief initialize a list of buckets
- * @param argc number of arguments
- * @param argv arguments
- * @param liste pointer to list of buckets to create
- * @return list_of_buckets
- * @author Pierre-Olivier Cayetanot
- */
-list_of_buckets initialize_list_of_bucket(int argc, char *argv[], list_of_buckets liste);
-/**
  * @brief free the list of buckets
  * @param list_of_buckets list of buckets to free
  * @return void
  * @author Pierre-Olivier Cayetanot
  */
-void free_list_of_buckets(list_of_buckets liste);
+void free_list_of_buckets(list_of_buckets liste,int base);
 
 /**
  * @brief Know the max lengh of the longest string in the list

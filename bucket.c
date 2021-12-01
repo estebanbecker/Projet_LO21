@@ -36,34 +36,49 @@ void print_bucket(bucket seau){
     }
 }
 
-void print_list_of_buckets(list_of_buckets liste){
-    int size = sizeof(liste) / sizeof(*liste); //calcul de la taille de la liste -> taille de la liste divisé par la taille d'un élément commeent utiliser une autre méthode pour
-    for(int i=0; i < size; i++){
+void print_list_of_buckets(list_of_buckets liste, int base){ 
+    for(int i=0; i < base; i++){
         print_bucket(liste[i]);
     }
 }
-
-
 
 list_of_buckets create_list_of_buckets(int base){
     list_of_buckets liste = NULL;
     liste = malloc(sizeof(bucket) * base);
     for (int i = 0; i < base; ++i) {
         liste[i] = malloc(sizeof(bucket));
+        liste[i] = NULL;
     }
     return liste;
 }
 
-list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste){
-    for (int i = 1;i < argc;i++){
-        add_head(liste[1], argv[i]);
+list_of_buckets initialize_list_of_buckets(int argc, char *argv[], list_of_buckets liste, int base){
+    int size, size_null;
+    char temp[11];
+    for (int i = 2;i < argc;i++){
+        for(int j = 0; j < 11; j++){
+            temp[j] = '\0';
+        }
+        size=strlen(argv[i]);
+        size_null=10-size;
+
+        for (int j = 0; j < size_null; ++j) {
+            temp[j] = '0';
+        }
+
+
+        strcat(temp, argv[i]);
+
+        liste[0]=add_head(liste[0],temp );
+        
+        
     }
     return liste;
 }
 
-void free_list_of_buckets(list_of_buckets liste){
-    int size = sizeof liste / sizeof *liste;
-    for(int i=0; i < size; i++){
+void free_list_of_buckets(list_of_buckets liste,int base){
+    
+    for(int i=0; i < base; i++){
         free_bucket(liste[i]);
     }
 }
@@ -94,7 +109,7 @@ int string_to_int_conversion(char character) {
 
 int max_lengh_list(char** liste, int lengh){
     int max = 0;
-    for(int i = 1; i < lengh; i++){
+    for(int i = 2; i < lengh; i++){
         if(strlen(liste[i]) > max){
             max = strlen(liste[i]);
         }
@@ -128,17 +143,27 @@ bucket move_head(bucket bucket_source, bucket bucket_target){
 }
 
 list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base){
- list_of_buckets new_list = create_list_of_buckets(base);
-    for (int  i = 0;  i < base; ++ i) {
-        bucket current = liste[i];
-        while (current != NULL) {
-            char character = get_char_at_pos_in_bucket(current, level);
-            int pos = string_to_int_conversion(character);
-            move_head(current, new_list[pos]);
-            current = current->next;
+
+    printf("%d",level);
+
+    if(level == 0){
+        return liste;
+    } else {
+        
+        list_of_buckets new_list = sort_list_of_buckets(liste, level-1,base);
+        for (int  i = 0;  i < base; ++ i) {
+            bucket current = liste[i];
+            while (current != NULL) {
+                char character = get_char_at_pos_in_bucket(current, level);
+                int pos = string_to_int_conversion(character);
+                move_head(current, new_list[pos]);
+                current = current->next;
+            }
+            free_list_of_buckets(liste,base);
         }
-        free_list_of_buckets(liste);
+        return new_list;
     }
+  
 }
 
 

@@ -10,25 +10,30 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "bucket.h"
 
 int main(int argc, char *argv[]){
+    
+    int max, base=atoi(argv[1]);
+    list_of_buckets liste;
 
-    char* char_base = argv[1];
-    int base = string_to_int_conversion(*char_base);
+    liste = create_list_of_buckets(base);
+    
 
-    base = 16;
+    liste=initialize_list_of_buckets(argc, argv, liste,base);
 
-    list_of_buckets liste = create_list_of_buckets(base);
-    initialize_list_of_bucket(argc, argv, liste);
 
-    for (int i  = 0; i  < base; ++i ) {
-        print_list_of_buckets(liste);
-        liste = sort_list_of_buckets(liste, i, base);
-    }
+    max = max_lengh_list(argv, argc);
+
+
+    print_list_of_buckets(liste, max);
+    
+    printf("%d",max);
+
+    sort_list_of_buckets(liste,max,base);
+
+    print_list_of_buckets(liste, max);
+
+    return 0;
 }
-//    int max;
-//    list_of_buckets liste;
-//    max = max_lengh_list(argv,argc);
-//    printf("%d\n",max);//fonction de debug
-//    return 0;
