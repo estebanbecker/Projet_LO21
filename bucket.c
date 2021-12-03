@@ -29,17 +29,23 @@ void free_bucket(bucket seau){
 }
 
 void print_bucket(bucket seau){
-
+    int j;
     bucket current = seau;
     while (current != NULL) {
-        printf("%s\n", current->val);
+        //print the value of current element without the 0 at the begening, example: 0000023587 -> 23587
+        j=0;
+        while (current->val[j] == '0') {
+            j++;
+        }
+        printf("%s\n", current->val+ j);
+        
+        
         current = current->next;
     }
 }
 
 void print_list_of_buckets(list_of_buckets liste, int base){ 
     for(int i=0; i < base; i++){
-
         print_bucket(liste[i]);
     }
 
@@ -158,8 +164,6 @@ list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base)
     list_of_buckets  liste_to;
     char temp;
     int value;
-
-    int been;
 
     if (level == 0) {
         return liste;

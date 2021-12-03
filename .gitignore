@@ -4,3 +4,4 @@ bucket.o
 Projet_LO21
 .vscode/c_cpp_properties.json
 .vscode/launch.json
+valgrind-out.txt
