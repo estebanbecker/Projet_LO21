@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
 
     liste=initialize_list_of_buckets(argc, argv, liste);
     
-    max = max_lengh_list(argv, argc);
+    max = max_length_list(argv, argc);
     
 
     liste=sort_list_of_buckets(liste, max, base);
