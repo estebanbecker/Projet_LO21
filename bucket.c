@@ -162,7 +162,6 @@ bucket remove_head(bucket seau){
 list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base){
 
     list_of_buckets  liste_to;
-    char temp;
     int value;
 
     if (level == 0) {
@@ -179,16 +178,15 @@ list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base)
             
             for(int j=0; j<base;j++){
             
-            while (liste[i] != NULL) {
-                temp = get_char_at_pos_in_bucket(liste[i], level);
-                value = string_to_int_conversion(temp);
-                
+                while (liste[i] != NULL) {
+                    value = string_to_int_conversion(get_char_at_pos_in_bucket(liste[i], level));
+                    
 
-                liste_to[value] = add_tail(liste_to[value], liste[i]->val);
-                
-                liste[i] = remove_head(liste[i]);
+                    liste_to[value] = add_tail(liste_to[value], liste[i]->val);
+                    
+                    liste[i] = remove_head(liste[i]);
 
-            }
+                }
            }
             
         }
