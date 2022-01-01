@@ -116,9 +116,9 @@ int string_to_int_conversion(char character) {
     return result;
 }
 
-int max_lengh_list(char** liste, int lengh){
+int max_length_list(char** liste, int length){
     int max = 0;
-    for(int i = 2; i < lengh; i++){
+    for(int i = 2; i < length; i++){
         if(strlen(liste[i]) > max){
             max = strlen(liste[i]);
         }
