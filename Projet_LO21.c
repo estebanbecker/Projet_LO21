@@ -1,7 +1,7 @@
 /**
  * @file Projet_LO21.c
  * @author Becker Esteban, Pierre-Olivier Cayetanot
- * @brief Program that use bucket sort to sort a list given in parameter in a defined base
+ * @brief Program using a bucket sort to sort a list of numbers given in parameter in a defined base given as first argument
  * @version 0.1
  * @date 2021-11-12
  * 
@@ -47,7 +47,8 @@ int main(int argc, char *argv[]){
 
 
 /**
- * @brief Verify that the arguments are valid, which means that the first argument is a positive integer and the list is a list of numbers is in the base
+ * @brief Verify that the arguments are valid, meaning that the first argument (the basis) is a positive integer between 1 and 16
+ * and that the list contains numbers valid for the basis (e.g. 12 isn't valid in base 2)
  * 
  * @param argc 
  * @param argv 
@@ -59,12 +60,12 @@ int are_argument_valid(int argc, char *argv[]){
 
     for(int i=0;i<len;i++){
         if(argv[1][i]<'0' || argv[1][i]>'9'){
-            printf("Please use a valid base\n");
+            printf("Base is not a number !\n Please use a valid base\n");
             return 0;
         }
     }
     if(atoi(argv[1])>16){
-        printf("Please use a valid base\n");
+        printf("Base can't be above hexadecimal !\n Please use a valide base\n");
         return 0;
     }
     for(int i=2;i<argc;i++){
@@ -79,7 +80,7 @@ int are_argument_valid(int argc, char *argv[]){
         
     }
     if(result==0){
-        printf("The number list does not fit in the base\n");
+        printf("A number in the list does not fit in the base\n Please use a valid set of numbers !\n");
     }
     return result;
 
