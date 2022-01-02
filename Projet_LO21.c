@@ -70,11 +70,14 @@ int are_argument_valid(int argc, char *argv[]){
     }
     for(int i=2;i<argc;i++){
         len=strlen(argv[i]);
+        if(len > 10){
+            result=0;    
+        }
         for(int j=0;j<len;j++){
 
             if(string_to_int_conversion(argv[i][j])>=atoi(argv[1]) || string_to_int_conversion(argv[i][j])==-1){
                 result=0;
-                
+
             }
         }
         
