@@ -15,7 +15,7 @@
 #define MAX_LENGH_CHAR 11
 
 /**
- * @brief Element of the bucket represented with a chained list.
+ * @brief Element of a bucket, represented using a chained list.
  * 
  */
 typedef struct elem{
@@ -23,10 +23,10 @@ typedef struct elem{
     struct elem *next; //!< Pointer to the next element.
 }element;
 
-//! @brief Pointer to the head of the bucket.
+//! @brief Pointer to the bucket's head.
 typedef element *bucket;
 
-//! @brief List of buckets that will have the size of the basis.
+//! @brief List of buckets (will be of the base's size).
 typedef bucket *list_of_buckets;
 
 /**
@@ -49,7 +49,7 @@ bucket add_tail(bucket seau, char *nombre);
 
 
 /**
- * @brief free the bucket
+ * @brief free a bucket
  * @param seau bucket to free
  * @return void
  * @author Pierre-Olivier Cayetanot
@@ -57,7 +57,7 @@ bucket add_tail(bucket seau, char *nombre);
 void free_bucket(bucket seau);
 
 /**
- * @brief print the bucket
+ * @brief print a bucket
  * @param seau bucket to print
  * @return void
  * @author Pierre-Olivier Cayetanot
@@ -74,7 +74,7 @@ void print_bucket(bucket seau);
 void print_list_of_buckets(list_of_buckets liste, int base);
 
 /**
- * @brief initialize a list of buckets
+ * @brief initialize a list of buckets with arguments
  * @param argc number of arguments
  * @param argv arguments
  * @param liste pointer to list of buckets to create
@@ -100,18 +100,18 @@ list_of_buckets create_list_of_buckets(int base);
 void free_list_of_buckets(list_of_buckets liste,int base);
 
 /**
- * @brief Know the max lengh of the longest string in the list
- * @param char list where to search
- * @param int lengh of the list
- * @return int
+ * @brief return the length of the longest string in the list
+ * @param char list of string
+ * @param int length of the list
+ * @return int max length
  * @author Esteban Becker
  */
-int max_lengh_list(char** liste, int lengh);
+int max_length_list(char** liste, int length);
 
 
 
 /**
- * @brief Know the charactère at a given position in a string of a bucket
+ * @brief return the character at a given position in a bucket's string
  * @param seau bucket to know the charactère
  * @param pos position to know the charactère
  * @return char
@@ -123,7 +123,7 @@ char get_char_at_pos_in_bucket(bucket seau, int pos);
 
 
 /**
- * @brief convert a string to its int conterpart in base 10 (a->11, f->)
+ * @brief convert a string to its int conterpart in base 10 (a->11, f->16)
  * @param character character to be converted
  * @return
  * @author Pierre-Olivier Cayetanot
