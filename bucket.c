@@ -190,6 +190,7 @@ list_of_buckets sort_list_of_buckets(list_of_buckets liste, int level, int base)
            }
             
         }
+        free_list_of_buckets(liste, base);
         return liste_to;       
     }
 }
