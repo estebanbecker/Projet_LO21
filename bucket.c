@@ -17,9 +17,9 @@
 
 
 void free_bucket(bucket seau){
-    bucket current = seau;
-    bucket next = seau->next;
+    bucket current = seau, next;
     while (current != NULL) {
+        next = current->next;
         free(current);
         if(next != NULL) {
             current = next;
@@ -90,6 +90,7 @@ void free_list_of_buckets(list_of_buckets liste,int base){
     for(int i=0; i < base; i++){
         free_bucket(liste[i]);
     }
+    free(liste);
 }
 
 char get_char_at_pos_in_bucket(bucket seau, int pos){
