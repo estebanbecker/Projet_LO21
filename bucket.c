@@ -34,7 +34,7 @@ void print_bucket(bucket seau){
     while (current != NULL) {
         //print the value of current element without the 0 at the begening, example: 0000023587 -> 23587
         j=0;
-        while (current->val[j] == '0') {
+        while (current->val[j] == '0' && j < 9) {
             j++;
         }
         printf("%s\n", current->val+ j);
