@@ -23,7 +23,6 @@ void free_bucket(bucket seau){
         free(current);
         if(next != NULL) {
             current = next;
-            next = next->next;
         }
     }
 }
